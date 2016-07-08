@@ -33,18 +33,24 @@ function queryWeather(queryType, query) {
     "use strict";
     switch (queryType) {
     case "zip":
-        $.getJSON("//api.openweathermap.org/data/2.5/weather?zip=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
-            updateWeather(weather);
+        $.ajax({
+            url: "//api.openweathermap.org/data/2.5/weather?zip=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e"
+            , dataType: "jsonp"
+            , jsonpCallback: "updateWeather"
         });
         break;
     case "city":
-        $.getJSON("//api.openweathermap.org/data/2.5/weather?q=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
-            updateWeather(weather);
+        $.ajax({
+            url: "//api.openweathermap.org/data/2.5/weather?q=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e"
+            , dataType: "jsonp"
+            , jsonpCallback: "updateWeather"
         });
         break;
     case "latLon":
-        $.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + query[0] + "&lon=" + query[1] + "&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
-            updateWeather(weather);
+        $.ajax({
+            url: "//api.openweathermap.org/data/2.5/weather?lat=" + query[0] + "&lon=" + query[1] + "&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e"
+            , dataType: "jsonp"
+            , jsonpCallback: "updateWeather"
         });
         break;
     default:
