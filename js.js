@@ -33,17 +33,17 @@ function queryWeather(queryType, query) {
     "use strict";
     switch (queryType) {
     case "zip":
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?zip=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
             updateWeather(weather);
         });
         break;
     case "city":
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + query + ",us&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
             updateWeather(weather);
         });
         break;
     case "latLon":
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + query[0] + "&lon=" + query[1] + "&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + query[0] + "&lon=" + query[1] + "&units=imperial&appid=32fcd78891a9e95e81d010e36d79c64e", function (weather) {
             updateWeather(weather);
         });
         break;
